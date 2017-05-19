@@ -17,7 +17,7 @@ public class Lhist<V> {
     }
 
     public void remove(V value) {
-        int removalCount = 0;
+        int removalCount = 0;  
         for (int i=0; i<size; i++) {
             if (array[i].equals(value))
                 ++removalCount;
