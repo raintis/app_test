@@ -1,0 +1,2 @@
+[JPivot] 17 Mrz 2008 14:53:05,567 ERROR [Session ] com.tonbeller.jpivot.tags.Log4jStateLogger#error: not found in stack: xxx
+

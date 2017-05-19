@@ -1,0 +1,333 @@
+<html xmlns:tl="http://www.tonbeller.com/jpivot/documentation/layout">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    
+<title>JPivot - Home</title>
+    
+<style type="text/css">
+      @import url("./style/maven.css");
+    </style>
+    
+    
+<meta name="author" value="Andreas Voss">
+  
+</head>
+
+  
+<body class="composite" marginwidth="0" marginheight="0">
+    
+<div id="banner">
+      
+<table border="0" cellspacing="0" cellpadding="8" width="100%">
+        
+<tr>
+          
+<td>
+            <strong>JPivot</strong>
+          </td>
+          <td>
+            
+<div align="right">
+              
+<a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=58645&type=4" width="125" height="37" border="0" alt="SourceForge.net Logo"></a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<div id="breadcrumbs">
+      
+<table border="0" cellspacing="0" cellpadding="4" width="100%">
+        
+<tr>
+          
+<td>Version 1.8.0 (Mon Mar 17 14:53:21 CET 2008)</td>
+          <td>
+            
+<div align="right">
+                
+<a href="http://www.tonbeller.com">Tonbeller</a>
+              | <a href="http://sourceforge.net/projects/jpivot/">JPivot</a>
+              | <a href="http://sourceforge.net/projects/mondrian">Mondrian</a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<table border="0" cellspacing="0" cellpadding="8" width="100%" height="80%" id="main">
+      
+<tr valign="top">
+        
+<td id="leftcol" width="20%">
+          
+<div id="navcolumn">
+            
+<div xmlns:lxslt="http://xml.apache.org/xslt">
+<strong>JPivot</strong>
+  
+<div class="menuentry">
+<b>Home</b>
+</div>
+
+
+  
+<div class="menuentry">
+<a href="http://sourceforge.net/projects/jpivot">Project Page</a>
+</div>
+  
+<div class="menuentry">
+<a href="changelog.html">Changelog</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<a href="temp-N10078.html">Architecture Overview</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<a href="news.html">News</a>
+</div>
+
+ 
+<div class="menuentry">
+<a href="temp-N101DC.html">XML/A</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="temp-N101F1.html">Screenshots</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="contribute.html">Contribute</a>
+</div>
+  
+<div class="menuentry">
+<a href="pdf-fonts">FOP Fonts Howto</a>
+</div>
+  
+<div class="menuentry">
+<a href="groovy">Groovy Scriptable DS</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="wcf/index.html">WCF</a>
+</div>
+  
+<div class="menuentry">
+<a href="junit/index.html">Unit Tests</a>
+</div>
+  
+<div class="menuentry">
+<a href="api/index.html">Java Doc</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/jpivot-tags-en.html">JPivot Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/wcf-tags-en.html">WCF Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="mondrian-schema/index.html">Mondrian Schema Plugin</a>
+</div>
+
+
+</div>
+          
+</div>
+        
+</td>
+        <td>
+          
+<h2>Home</h2>
+          
+
+    JPivot is a JSP custom tag library that renders an OLAP table and let users
+    perform typical OLAP navigations like slice and dice, drill down and roll up.
+    It uses <a href="http://mondrian.sourceforge.net">Mondrian</a> as its OLAP Server.
+    JPivot also supports <a href="http://www.xmla.org">XMLA</a> datasource access.
+
+    <h3>How to run?</h3>
+    Download the <tt>jpivot-[version].zip</tt> and extract the <tt>jpivot.war</tt> file.
+    Place the war file into tomcats webapp directory.
+    <p></p>
+    Make sure, Mondrian gets some memory for caching - this will improve speed
+    significantly. For example, set the environment variable
+    <code>
+      JAVA_OPTS=-Xms256m -Xmx512m
+    </code>
+    to have 256 megs for caching and 512 megs for temporary peaks.
+    <p></p>
+    Start Tomcat and point your browser to <a href="http://localhost:8080/jpivot">http://localhost:8080/jpivot</a>.
+    You'll need JDK 1.4 and Tomcat 4.1.30, JPivot does not work with earlier versions (sorry).
+    <p></p>
+    There are some simple examples that run without a database, but you probably want to
+    run the DB examples too.
+    Download the <a href="MondrianFoodMart-Access.zip">MondrianFoodMart-Access.zip</a>
+    and set up an ODBC datasource called <tt>MondrianFoodMart</tt> that uses MS Access
+    Database and points to <tt>MondrianFoodMart.mdb</tt> from the above download.
+    JPivot examples are configured to use this setup.
+
+    <h4>Using JDBC driver</h4>
+    JPivot reads the connection parameters from JSPs
+    containing the &lt;jp:mondrianQuery ...&gt; tag which contains the MDX query. This allows to
+    run queries against different databases. The example JSPs live in /WEB-INF/queries
+    and are configured for MS Access, the MySQL version is commented out. You will have
+    to change these to run other databases.
+
+    <h4>Using J2EE DataSource</h4>
+    You may use a predefined JDBC DataSource to run your MDX queries.
+    <pre>
+    &lt;jp:mondrianQuery
+       id="query01"
+       dataSource="jdbc/JPivotDS"
+       catalogUri="/WEB-INF/demo/FoodMart.xml"&gt;
+        MDX goes here
+    &lt;/jp:mondrianQuery&gt;
+    </pre>
+    Look at the tomcat documentation to see how to set up a datasource. Example follows:
+    <pre>
+    &lt;Context path="/jpivot" docBase="C:\dev\jpivot\build\web" debug="0"
+             reloadable="true" crossContext="true"&gt;
+      &lt;Resource auth="Container" name="jdbc/JPivotDS"
+          type="javax.sql.DataSource"/&gt;
+      &lt;ResourceParams name="jdbc/JPivotDS"&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;factory&lt;/name&gt;
+          &lt;value&gt;org.apache.commons.dbcp.BasicDataSourceFactory&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;maxActive&lt;/name&gt;
+          &lt;value&gt;400&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;maxWait&lt;/name&gt;
+          &lt;value&gt;5000&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;maxIdle&lt;/name&gt;
+          &lt;value&gt;2&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;username&lt;/name&gt;
+          &lt;value&gt;tarzan&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;password&lt;/name&gt;
+          &lt;value&gt;jane&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;driverClassName&lt;/name&gt;
+          &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+          &lt;name&gt;url&lt;/name&gt;
+          &lt;value&gt;jdbc:mysql://localhost:3306/foodmart?autoReconnect=true&lt;/value&gt;
+        &lt;/parameter&gt;
+      &lt;/ResourceParams&gt;
+    &lt;/Context&gt;
+    </pre>
+
+    In web.xml you have to reference the data source as follows:
+    <pre>
+    &lt;resource-ref&gt;
+      &lt;description&gt;DB Connection&lt;/description&gt;
+      &lt;res-ref-name&gt;jdbc/JPivotDS&lt;/res-ref-name&gt;
+      &lt;res-type&gt;javax.sql.DataSource&lt;/res-type&gt;
+      &lt;res-auth&gt;Container&lt;/res-auth&gt;
+    &lt;/resource-ref&gt;
+    </pre>
+
+    
+<h3>How to compile?</h3>
+    The distribution contains binary and source. The jpivot.war file contains in its /WEB-INF/lib
+    directory all *.jar files that are needed to build. The simplest way to set up a build environment
+    is to
+    <ol>
+      
+<li>extract the jpivot.war file to some temp directory by renaming it to jpivot.zip </li>
+      
+<li>from /WEB-INF/lib copy all *.jar files <em>except jpivot.jar</em> to the lib/ directory
+       of the jpivot distribution (which already contains mondrian-src.jar</li>
+    
+</ol>
+    Now you should be able to build JPivot using ant. You will have to
+    define the following ant properties in your build.properties (e.g. in your home directory):
+    <code>
+<pre>
+    catalina.home=c:/java/jakarta-tomcat-4.1.30
+    mysql.home=c:/java/mysql-connector-java-3.0.8-stable
+    xalan.home=c:/java/xalan-j_2_6_0
+    </pre>
+</code>
+    Then ant should work. For running the tests you will have to set up the
+    MondrianFoodMart database, either MS Access or MySQL (see build.xml).
+
+    <h3>How to use in another web application?</h3>
+    Unzip the war file. You will need the following files
+    <ul>
+      
+<li>/wcf/**</li>
+      
+<li>/jpivot/**</li>
+      
+<li>/WEB-INF/wcf/**</li>
+      
+<li>/WEB-INF/jpivot/**</li>
+      
+<li>/WEB-INF/lib/**</li>
+      
+<li>You will have to merge the entries from /WEB-INF/web.xml into your applications web.xml</li>
+    
+</ul>
+
+  
+        
+</td>
+      
+</tr>
+    
+</table>
+
+    
+<div id="footer">
+      
+<table border="0" cellspacing="0" cellpadding="4">
+        
+<tr>
+          
+<td>&copy; 2003, TONBELLER AG</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+  
+</body>
+
+</html>

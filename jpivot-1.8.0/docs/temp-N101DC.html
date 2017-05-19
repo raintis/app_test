@@ -1,0 +1,210 @@
+<html xmlns:tl="http://www.tonbeller.com/jpivot/documentation/layout">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    
+<title>JPivot - XML/A</title>
+    
+<style type="text/css">
+      @import url("./style/maven.css");
+    </style>
+    
+    
+<meta name="author" value="Andreas Voss">
+  
+</head>
+
+  
+<body class="composite" marginwidth="0" marginheight="0">
+    
+<div id="banner">
+      
+<table border="0" cellspacing="0" cellpadding="8" width="100%">
+        
+<tr>
+          
+<td>
+            <strong>JPivot</strong>
+          </td>
+          <td>
+            
+<div align="right">
+              
+<a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=58645&type=4" width="125" height="37" border="0" alt="SourceForge.net Logo"></a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<div id="breadcrumbs">
+      
+<table border="0" cellspacing="0" cellpadding="4" width="100%">
+        
+<tr>
+          
+<td>Version 1.8.0 (Mon Mar 17 14:53:21 CET 2008)</td>
+          <td>
+            
+<div align="right">
+                
+<a href="http://www.tonbeller.com">Tonbeller</a>
+              | <a href="http://sourceforge.net/projects/jpivot/">JPivot</a>
+              | <a href="http://sourceforge.net/projects/mondrian">Mondrian</a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<table border="0" cellspacing="0" cellpadding="8" width="100%" height="80%" id="main">
+      
+<tr valign="top">
+        
+<td id="leftcol" width="20%">
+          
+<div id="navcolumn">
+            
+<div xmlns:lxslt="http://xml.apache.org/xslt">
+<strong>JPivot</strong>
+  
+<div class="menuentry">
+<a href="index.html">Home</a>
+</div>
+
+
+  
+<div class="menuentry">
+<a href="http://sourceforge.net/projects/jpivot">Project Page</a>
+</div>
+  
+<div class="menuentry">
+<a href="changelog.html">Changelog</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<a href="temp-N10078.html">Architecture Overview</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<a href="news.html">News</a>
+</div>
+
+ 
+<div class="menuentry">
+<b>XML/A</b>
+</div>
+
+  
+<div class="menuentry">
+<a href="temp-N101F1.html">Screenshots</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="contribute.html">Contribute</a>
+</div>
+  
+<div class="menuentry">
+<a href="pdf-fonts">FOP Fonts Howto</a>
+</div>
+  
+<div class="menuentry">
+<a href="groovy">Groovy Scriptable DS</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="wcf/index.html">WCF</a>
+</div>
+  
+<div class="menuentry">
+<a href="junit/index.html">Unit Tests</a>
+</div>
+  
+<div class="menuentry">
+<a href="api/index.html">Java Doc</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/jpivot-tags-en.html">JPivot Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/wcf-tags-en.html">WCF Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="mondrian-schema/index.html">Mondrian Schema Plugin</a>
+</div>
+
+
+</div>
+          
+</div>
+        
+</td>
+        <td>
+          
+<h2>XML/A</h2>
+          
+    
+<h3>How to access XMLA data sources?</h3>
+    Use the <code>xmlaQuery</code> tag instead of <code>mondrianQuery</code>. You will have to
+    enter the XMLA URI and a catalog name.<br>
+    
+<h4>Example</h4>
+    
+<pre>
+    &lt;jp:xmlaQuery
+       id="query01"
+       uri="http://MYSERVER/XML4A/msxisapi.dll"
+       catalog="Foodmart 2000"&gt;
+        select {[Measures].[Unit Sales]} on columns,
+        [Product].[All Products].children on rows
+        from Sales where ([Time].[1997])
+    &lt;/jp:xmlaQuery&gt;
+    </pre>
+ 
+        
+</td>
+      
+</tr>
+    
+</table>
+
+    
+<div id="footer">
+      
+<table border="0" cellspacing="0" cellpadding="4">
+        
+<tr>
+          
+<td>&copy; 2003, TONBELLER AG</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+  
+</body>
+
+</html>

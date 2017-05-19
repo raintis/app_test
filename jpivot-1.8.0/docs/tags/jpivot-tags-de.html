@@ -1,0 +1,979 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>jpivot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+          body {
+            background-color: #ffffff;
+            font-family: Verdana, SansSerif;
+            font-size: 10 pt;
+          }
+          td,th {
+            font-size: 10 pt;
+            text-align: left;
+            vertical-align: top;
+          }
+          th {
+            font-weight: bold;
+          }
+        </style>
+</head>
+<body>
+<h2>jpivot (de)</h2>
+  
+<h3>Content</h3>
+<ul>
+<li>
+<a href="#chart">chart</a>
+</li>
+<li>
+<a href="#chooseQuery">chooseQuery</a>
+</li>
+<li>
+<a href="#clickable">clickable</a>
+</li>
+<li>
+<a href="#destroyQuery">destroyQuery</a>
+</li>
+<li>
+<a href="#mondrianQuery">mondrianQuery</a>
+</li>
+<li>
+<a href="#navigator">navigator</a>
+</li>
+<li>
+<a href="#print">print</a>
+</li>
+<li>
+<a href="#scalarQuery">scalarQuery</a>
+</li>
+<li>
+<a href="#selectproperties">selectproperties</a>
+</li>
+<li>
+<a href="#setParam">setParam</a>
+</li>
+<li>
+<a href="#table">table</a>
+</li>
+<li>
+<a href="#testQuery">testQuery</a>
+</li>
+<li>
+<a href="#xmlaQuery">xmlaQuery</a>
+</li>
+</ul>
+<hr>
+<p></p>
+<h3>
+<a name="chart">chart</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt einen Chart. Diese Komponente erzeugt selbst keinen sichtbaren Output, sie wird durch das WCF <tt>render</tt> Tag dargestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>visible</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">Entscheidet, ob die Komponenente sichtbar ist oder nicht. Das WCF Render Tag zeigt eine Komponente mit visible == false nicht an</descr>
+</td>
+</tr>
+<tr>
+<td>role</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+    Name einer Rolle, optional mit vorangestelltem '!'.
+    Beispiel role='tomcat' erlaubt allen Mitgliedern der Rolle 'tomcat' den Zugriff,
+    role='!tomcat' erlaubt allen ausser den Mitgliedern der Rolle 'tomcat' den Zugriff.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>query</td><td>true</td><td>OlapModel</td><td>true</td><td>
+<descr lang="de">
+    Name des Session Attributes, das die OLAP Daten (Query und Ergebnis) f&uuml;r dieses Tag enth&auml;lt.
+    Bei Reports, die vom SironDWH Builder erzeugt werden, wird die Query
+    beim Start des Reports aus dem Repository geladen und unter dem Namen
+    <tt>query01</tt> in der Session abgelegt. Alternativ kann die Query
+    auch &uuml;ber das Tag <tt>mondrian</tt> erzeugt werden.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>baseDisplayURL</td><td>false</td><td>String</td><td>true</td><td></td>
+</tr>
+<tr>
+<td>controllerURL</td><td>false</td><td>String</td><td>true</td><td></td>
+</tr>
+</table>
+<hr>
+<p></p>
+<h3>
+<a name="chooseQuery">chooseQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      W&auml;hlt eine query aus, die vorher mit einem queryName attribut erzeugt wurde.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>queryName</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">name der query die aktiviert werden soll</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:mondrianQuery id="query01" queryName="name1"&gt;
+   SELECT ...
+&lt;/jp:mondrianQuery&gt;
+&lt;jp:mondrianQuery id="query01" queryName="name2"&gt;
+   SELECT ...
+&lt;/jp:mondrianQuery&gt;
+...
+&lt;jp:chooseQuery id="query01" queryName="name1"/&gt;
+</pre>
+<hr>
+<p></p>
+<h3>
+<a name="clickable">clickable</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>EMPTY</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Alle Member einer Dimension oder Level werden mit einem anchor gerenderd, d.h.
+      sie sind anklickbar. In der URL ist der Name des angeklickten Member enthalten.
+      Kann nur innerhalb eines table Tags verwendet werden.
+      <p></p>
+      Das Verhalten ist abh&auml;nig davon, ob das Attribut sessionParam gesetzt ist oder nicht.
+      Wenn sessionParam gesetzt ist, wird der Parameterwert nicht in die URL codiert, sondern
+      in den com.tonbeller.jpivot.param.SessionParamPool geschrieben, bevor auf die neue Seite verzweigt wird. Ist sessionParam
+      nicht gesetzt, wird der unique name in die Url codiert und muss auf Empf&auml;ngerseite
+      ausgewertet werden.
+      <p></p>
+      Das Tag muss innerhalb eines table tags oder eines query tags verwendet werden. Innerhalb
+      eines table tags ist das clickable fuer alle queries vorhanden, innerhalb eines query-tags
+      nur fuer die jeweilige query.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>urlPattern</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+        DEPRECATED - sollte nicht in Verbindung mit session Parametern verwendet werden,
+        da der Browser Back Button nicht wie erwartet funktioniert. Verwenden Sie statt
+        dessen das <tt>page</tt> Attribute.
+        <p></p>
+        Pattern aus dem die URL konstruiert wird.
+        Ist das Attribut sessionParam NICHT gesetzt, wird {0} durch den unique name
+        des members ersetzt. Wenn urlPattern mit "/" beginnt, ist die URL relativ zum
+        Application context (d.h. der Kontext wird vorangestellt), ansonsten ist sie absolut.
+      </descr>
+</td>
+</tr>
+<tr>
+<td>page</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Name der Ziel JSP, muss mit "/" beginnen. Wenn nicht angegeben,
+        wird die gleiche Seite wieder angezeigt.
+      </descr>
+</td>
+</tr>
+<tr>
+<td>uniqueName</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">unique name einer Dimension, Hierarchy oder Level, deren Elemente angeklickt werden k&ouml;nnen.</descr>
+</td>
+</tr>
+<tr>
+<td>menuLabel</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Werden mehrere Clickables definiert, dann werden diese in einem Popup Menu zur Auswahl angeboten, dabei wird dieser Text im Menu Eintrag angezeigt.</descr>
+</td>
+</tr>
+<tr>
+<td>sessionParam</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Parameters, der in den com.tonbeller.jpivot.param.SessionParamPool gestellt wird</descr>
+</td>
+</tr>
+<tr>
+<td>propertyName</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Wenn vorhanden wird der Wert der Elementeigenschaft als sqlValue des com.tonbeller.jpivot.param.Parameter genommen</descr>
+</td>
+</tr>
+<tr>
+<td>propertyPrefix</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Wenn vorhanden, wird fuer jedes Member Property ein SessionParam erzeugt.
+      Der Name des SessionParam ist der Name des Member Property ohne das propertyPrefix. Wenn
+      vorhanden, d&uuml;rfen die Attribute sessionParam und propertyName nicht gesetzt sein.</descr>
+</td>
+</tr>
+<tr>
+<td>providerClass</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Wenn vorhanden wird eine Instanz dieser Klasse die SessionParam aus einem
+      Member erzeugen. Die Klasse muss das Interface com.tonbeller.jpivot.table.navi.ClickableMember.ParameterProvider
+      implementieren</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:mondrianQuery ...&gt;
+  select .. from Sales
+  &lt;jp:clickable urlPattern="/otherpage.jsp?param={0}" uniqueName="[Customers]"/&gt;
+  &lt;jp:clickable page="/yetotherpage.jsp" uniqueName="[Products].[Category]" sessionParam="Category"/&gt;
+&lt;/jp:mondrianQuery&gt;
+    </pre>
+<hr>
+<p></p>
+<h3>
+<a name="destroyQuery">destroyQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      l&ouml;scht alle queries mit dieser id
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>&lt;jp:destroyQuery id="query01"/&gt;</pre>
+<hr>
+<p></p>
+<h3>
+<a name="mondrianQuery">mondrianQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt ein neues Session Attribut, das eine Mondrian Query enth&auml;lt und anderen Komponenten
+      wie Tabelle und Chart den Zugriff auf das Ergebnis sowie die Navigationsm&ouml;glichkeiten
+      erlaubt. <em>Anders als die &uuml;brigen Tags dieser Bibiliothek (und z.B. &lt;jsp:useBean&gt;)
+      wird das Session Attribut in jedem Fall erzeugt, ein evtl vorhandenes Attribut wird
+      dabei ersetzt.</em> Es muss also z.B. durch Verwendung des JPivot <tt>include</tt> Tags oder
+      durch JSTL &lt;c:if&gt; sichergestellt werden, dass die Query nur dann neu erzeugt wird,
+      wenn dies auch gew&uuml;nscht ist.
+      <p></p>
+      Wenn der Application Server eine vorkonfigurierte JDBC DataSource bereitstellt, kann diese
+      &uuml;ber das Attribut <tt>dataSource</tt> verwendet werden. Wenn nicht, k&ouml;nnen die
+      JDBC Verbindungsparameter einzeln eingestellt werden.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>jdbcDriver</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Java Klassenname des JDBC Treibers</descr>
+</td>
+</tr>
+<tr>
+<td>jdbcUrl</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Verbindungsparameter, diese sind Datenbankspezifisch</descr>
+</td>
+</tr>
+<tr>
+<td>jdbcUser</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">user Kennung f&uuml;r Verbindung zur Datenbank</descr>
+</td>
+</tr>
+<tr>
+<td>jdbcPassword</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Passwort f&uuml;r Verbindung zur Datenbank</descr>
+</td>
+</tr>
+<tr>
+<td>dataSource</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">JNDI Name einer vorkonfigurierten JDBC DataSource, e.g. jdbc/SironTDI. Kann nicht zusammen mit den anderen JDBC Attributen verwendet werden.</descr>
+</td>
+</tr>
+<tr>
+<td>catalogUri</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Pfad des Mondrian Schemas, relativ zum Application Context, z.B.<tt>/WEB-INF/FoodMart.xml</tt>
+</descr>
+</td>
+</tr>
+<tr>
+<td>config</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">internal use only</descr>
+</td>
+</tr>
+<tr>
+<td>role</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Rolle aus dem Mondrian Schema</descr>
+</td>
+</tr>
+<tr>
+<td>dynResolver</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Klasse zum dynamischen Aufl&ouml;sen von Variablen im Mondrian Schema</descr>
+</td>
+</tr>
+<tr>
+<td>dynLocale</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Klasse zum dynamischen Aufl&ouml;sen von Variablen im Mondrian Schema</descr>
+</td>
+</tr>
+<tr>
+<td>connectionPooling</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">"false" verhindert Mondrian Connection Pooling</descr>
+</td>
+</tr>
+<tr>
+<td>dataSourceChangeListener</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Klasse zum &auml;nderungen im DataSource zu ermitteln</descr>
+</td>
+</tr>
+<tr>
+<td>queryName</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+        Je queryName kann eine Query in diesem Session Attribut gehalten werden.
+        Es wird jeweils die letzte Query gespeichert. Mit dem chooseQuery tag
+        kann zwischen den queryName's bzw queries.
+      </descr>
+</td>
+</tr>
+<tr>
+<td>stackMode</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">
+        Wenn dieses Feld auf "false" gesetzt wird, dann werden alle queryName Attribute gleich
+        behandelt, unabh&auml;ngig von der Reihenfolge, in der die Queries ausgef&uuml;hrt werden.
+        Wenn dieses Feld auf "true" gesetzt wird, werden die verschiedenen queryNames in
+        einem Stack gehalten. Beispiel:
+        <ul>
+          
+<li>Eine query mit queryName <tt>qn1</tt> wird erzeugt und angezeigt</li>
+          
+<li>Eine query mit queryName <tt>qn2</tt> wird erzeugt und angezeigt.
+              Nun enth&auml;lt der Stack <tt>qn1</tt> und <tt>qn2</tt>. <tt>qn2</tt> ist
+              die sichtbare Query, d.h. eine Tabelle wird die Daten von <tt>qn2</tt>
+              anzeigen.</li>
+          
+<li>Wenn jetzt z.B. der Benutzer auf <tt>qn1</tt> zur&uuml;ckgeht, indem er eine Seite
+              mit dem chooseQuery Tag aufruft, dann wird <tt>qn2</tt> beendet und der Speicher
+              freigegeben. Dies passiert nur im Stack Mode, im Nicht-Stack-Mode w&uuml;rde
+              <tt>qn2</tt> weiterhin erhalten bleiben und k&ouml;nnte &uuml;ber chooseQuery wiederum
+              zur Anzeige gebracht werden.</li>
+        
+</ul>
+        Im Nicht-Stack-Modus kann der Benutzer zwischen den verschiedenen Queries beliebig
+        wechseln. Im Stack Modus kann er das nicht, wenn er zu einer "fr&uuml;heren" Query zur&uuml;ckgeht,
+        werden alle danach gestarteten Queries gel&ouml;scht.
+      </descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>&lt;jp:mondrianQuery id="query01"
+  jdbcDriver="com.mysql.jdbc.Driver"
+  jdbcUrl="jdbc:mysql://localhost/foodmart"
+  catalogUri="/WEB-INF/test/FoodMart.xml"&gt;
+select
+  {[Measures].[Unit Sales], [Measures].[Store Cost], [Measures].[Store Sales]} on columns,
+  {[Product].[All Products]} ON rows
+from Sales
+where ([Time].[1997])
+&lt;/jp:mondrianQuery&gt;</pre>
+<hr>
+<p></p>
+<h3>
+<a name="navigator">navigator</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt eine Navigator Komponente. Diese Komponente erzeugt selbst keinen sichtbaren Output, sie wird durch das WCF <tt>render</tt> Tag dargestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>query</td><td>true</td><td>OlapModel</td><td>true</td><td>
+<descr lang="de">
+    Name des Session Attributes, das die OLAP Daten (Query und Ergebnis) f&uuml;r dieses Tag enth&auml;lt.
+    Bei Reports, die vom SironDWH Builder erzeugt werden, wird die Query
+    beim Start des Reports aus dem Repository geladen und unter dem Namen
+    <tt>query01</tt> in der Session abgelegt. Alternativ kann die Query
+    auch &uuml;ber das Tag <tt>mondrian</tt> erzeugt werden.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>visible</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">Entscheidet, ob die Komponenente sichtbar ist oder nicht. Das WCF Render Tag zeigt eine Komponente mit visible == false nicht an</descr>
+</td>
+</tr>
+<tr>
+<td>role</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+    Name einer Rolle, optional mit vorangestelltem '!'.
+    Beispiel role='tomcat' erlaubt allen Mitgliedern der Rolle 'tomcat' den Zugriff,
+    role='!tomcat' erlaubt allen ausser den Mitgliedern der Rolle 'tomcat' den Zugriff.
+  </descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:navigator id="navi01" query="#{query01}" visible="false"/&gt;
+&lt;wcf:render ref="navi01" xslUri="/WEB-INF/jpivot/navi/navigator.xsl" xslCache="true"/&gt;
+    </pre>
+<hr>
+<p></p>
+<h3>
+<a name="print">print</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt einen Print. Diese Komponente erzeugt selbst keinen sichtbaren Output, sie wird durch das WCF <tt>render</tt> Tag dargestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+</table>
+<hr>
+<p></p>
+<h3>
+<a name="scalarQuery">scalarQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt ein neues Session Attribut, das eine OLAP Ergebnis enth&auml;lt, das
+      aus einer einzelnen Zelle besteht. Die Werte werden &uuml;ber die Attribute
+      des Tags bereitgestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>value</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">EL expression evaluating to the value (number)</descr>
+</td>
+</tr>
+<tr>
+<td>formattedValue</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">EL expression evaluating to the formatted value (String)</descr>
+</td>
+</tr>
+<tr>
+<td>caption</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">EL expression evaluating to the caption (String)</descr>
+</td>
+</tr>
+<tr>
+<td>queryName</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">see mondrianQuery</descr>
+</td>
+</tr>
+<tr>
+<td>stackMode</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">see mondrianQuery</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:scalarQuery
+  id="query01"
+  value="#{some.bean.property}"&gt;
+  formattedValue="#{some.bean.otherProperty}"
+  caption="Some Caption" /&gt;
+ </pre>
+<hr>
+<p></p>
+<h3>
+<a name="selectproperties">selectproperties</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt eine Select Properties Komponente. Sie erlaubt einem, auszuw&auml;hlen, welche
+      Properties sichtbar sein sollen, und in welcher Reihenfolge. Diese Komponente erzeugt selbst keinen sichtbaren Output, sie wird durch das WCF <tt>render</tt> Tag dargestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>table</td><td>true</td><td>TableComponent</td><td>true</td><td>
+<descr lang="de">
+    Name des Session Attributes, das die OLAP Daten (Query und Ergebnis) f&Atilde;&frac14;r dieses Tag enth&Atilde;&curren;lt.
+    Bei Reports, die vom SironDWH Builder erzeugt werden, wird die Query
+    beim Start des Reports aus dem Repository geladen und unter dem Namen
+    <tt>query01</tt> in der Session abgelegt. Alternativ kann die Query
+    auch &Atilde;&frac14;ber das Tag <tt>mondrian</tt> erzeugt werden.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>visible</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">Entscheidet, ob die Komponenente sichtbar ist oder nicht. Das WCF Render Tag zeigt eine Komponente mit visible == false nicht an</descr>
+</td>
+</tr>
+<tr>
+<td>role</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+    Name einer Rolle, optional mit vorangestelltem '!'.
+    Beispiel role='tomcat' erlaubt allen Mitgliedern der Rolle 'tomcat' den Zugriff,
+    role='!tomcat' erlaubt allen ausser den Mitgliedern der Rolle 'tomcat' den Zugriff.
+  </descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:selectproperties id="selectprop01" table="#{table01}" visible="false"/&gt;
+&lt;wcf:render ref="selectprop01" xslUri="/WEB-INF/jpivot/navi/navigator.xsl" xslCache="true"/&gt;
+    </pre>
+<hr>
+<p></p>
+<h3>
+<a name="setParam">setParam</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Setzt einen MDX Parameter aus einem HTTP Parameter oder einem Session Parameter.
+      Der Body wird nur dann evaluiert, wenn der HTTP Parameter vorhanden
+      ist. Wird hier eine Mondrian Query hingeschrieben, dann wird
+      diese immer dann neu initialisiert, wenn der HTTP Parameter vorhanden ist.
+      Bei Verwendung von Session Parameter wird der body nie ausgef&uuml;hrt.
+      Genau eines der Attribute httpParam oder sessionParam muss gesetzt sein.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>query</td><td>true</td><td>OlapModel</td><td>true</td><td>
+<descr lang="de">
+    Name des Session Attributes, das die OLAP Daten (Query und Ergebnis) f&uuml;r dieses Tag enth&auml;lt.
+    Bei Reports, die vom SironDWH Builder erzeugt werden, wird die Query
+    beim Start des Reports aus dem Repository geladen und unter dem Namen
+    <tt>query01</tt> in der Session abgelegt. Alternativ kann die Query
+    auch &uuml;ber das Tag <tt>mondrian</tt> erzeugt werden.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>httpParam</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des HTTP Parameters. Wenn der Parameter vorhanden ist,
+      wird sein Wert in die MDX Query als Parameterwert eingetragen.</descr>
+</td>
+</tr>
+<tr>
+<td>sessionParam</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Parameters</descr>
+</td>
+</tr>
+<tr>
+<td>mdxParam</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des zu setzenden MDX Parameters in der Query</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:mondrianQuery id="query01"...&gt;
+  SELECT ... Parameter("Param01", ...)
+  WHERE ...
+&lt;/jp:mondrianQuery/&gt;
+
+&lt;jp:setParam query="query01" httpParam="param" mdxParam="Param01"/&gt;
+or
+&lt;jp:setParam query="query01" sessionParam="CUSTOMER" mdxParam="Param01"/&gt;
+    </pre>
+<hr>
+<p></p>
+<h3>
+<a name="table">table</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt eine Tabellenkomponente. Diese Komponente erzeugt selbst keinen sichtbaren Output, sie wird durch das WCF <tt>render</tt> Tag dargestellt.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>visible</td><td>false</td><td>boolean</td><td>true</td><td>
+<descr lang="de">Entscheidet, ob die Komponenente sichtbar ist oder nicht. Das WCF Render Tag zeigt eine Komponente mit visible == false nicht an</descr>
+</td>
+</tr>
+<tr>
+<td>role</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">
+    Name einer Rolle, optional mit vorangestelltem '!'.
+    Beispiel role='tomcat' erlaubt allen Mitgliedern der Rolle 'tomcat' den Zugriff,
+    role='!tomcat' erlaubt allen ausser den Mitgliedern der Rolle 'tomcat' den Zugriff.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>query</td><td>true</td><td>OlapModel</td><td>true</td><td>
+<descr lang="de">
+    Name des Session Attributes, das die OLAP Daten (Query und Ergebnis) f&uuml;r dieses Tag enth&auml;lt.
+    Bei Reports, die vom SironDWH Builder erzeugt werden, wird die Query
+    beim Start des Reports aus dem Repository geladen und unter dem Namen
+    <tt>query01</tt> in der Session abgelegt. Alternativ kann die Query
+    auch &uuml;ber das Tag <tt>mondrian</tt> erzeugt werden.
+  </descr>
+</td>
+</tr>
+<tr>
+<td>configXml</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Pfad einer Konfigurationsdatei mit der kundenspezifischer Code eingebunden werden kann</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>&lt;jp:table id="table01" query="#{query01}" visible="true"/&gt;</pre>
+<hr>
+<p></p>
+<h3>
+<a name="testQuery">testQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">Erzeugt Testdaten, die mit Tabelle / Chart usw angezeigt werden k&ouml;nnen</descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>onRows</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Namen der anzuzeigenden Dimensionen in den Zeilen, durch Leerzeichen getrennt. M&ouml;gliche Werte: Measures, Region, Products, Advertising, Material</descr>
+</td>
+</tr>
+<tr>
+<td>onColumns</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Namen der anzuzeigenden Dimensionen in den Spalten, durch Leerzeichen getrennt. M&ouml;gliche Werte: Measures, Region, Products, Advertising, Material</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>
+&lt;jp:testQuery id="query01" onColumns="Measures" onRows="Products Region"&gt;
+  for some reason, the body must not be empty
+&lt;/jp:testQuery&gt;
+    </pre>
+<hr>
+<p></p>
+<h3>
+<a name="xmlaQuery">xmlaQuery</a>
+</h3>
+<table width="100%">
+<col width="1%" align="left" valign="top">
+<col width="99%" align="left" valign="top">
+<tr>
+<th nowrap="nowrap">Body Content</th><td>JSP</td>
+</tr>
+<tr>
+<th>Description</th><td>
+<descr lang="de">
+      Erzeugt ein neues Session Attribut, das eine XMLA Query enth&auml;lt. Es erlaubt anderen Komponenten
+      wie Tabelle und Navigator das Ergebnis darzustellen und in dem Cube zu navigieren.
+      <em>Anders als die &uuml;brigen Tags dieser Bibiliothek (und z.B. &lt;jsp:useBean&gt;)
+      wird das Session Attribut in jedem Fall erzeugt, ein evtl. vorhandenes Attribut wird
+      dabei ersetzt.</em> Es muss also z.B. durch Verwendung des JPivot <tt>include</tt> Tags oder
+      durch JSTL &lt;c:if&gt; sichergestellt werden, dass die Query nur dann neu erzeugt wird,
+      wenn dies auch gew&uuml;nscht ist.
+    </descr>
+</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="1%" align="left" valign="top">
+<col width="97%" align="left" valign="top">
+<tr>
+<th>Attribute</th><th>Required</th><th>Type</th><th>rtexpr</th><th>Description</th>
+</tr>
+<tr>
+<td>id</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Name des Session Attributes, das durch dieses Tag erzeugt wird</descr>
+</td>
+</tr>
+<tr>
+<td>uri</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Die URI des XMLA Servers</descr>
+</td>
+</tr>
+<tr>
+<td>dataSource</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">DataSourceInfo Spezifikation, etwa "Provider=MSOLAP;Data Source=local"</descr>
+</td>
+</tr>
+<tr>
+<td>catalog</td><td>true</td><td>String</td><td>true</td><td>
+<descr lang="de">Catalog Spezification, etwa "Foodmart 2000"</descr>
+</td>
+</tr>
+<tr>
+<td>config</td><td>false</td><td>String</td><td>true</td><td>
+<descr lang="de">Pfad zu einer Konfigurationsdatei, relativ zum Application Context, &uuml;ber
+        die Kundenspezifischer Code eingebunden werden kann</descr>
+</td>
+</tr>
+</table>
+<h4>Example</h4>
+<pre>&lt;jp:xmlaQuery id="query01"
+  uri="http://MYSERVER/XML4A/msxisapi.dll"
+  catalog="Foodmart 2000"&gt;
+select
+  {[Measures].[Unit Sales], [Measures].[Store Cost], [Measures].[Store Sales]} on columns,
+  {[Product].[All Products]} ON rows
+from Sales
+where ([Time].[1997])
+&lt;/jp:xmlaQuery&gt;</pre>
+</body>
+</html>

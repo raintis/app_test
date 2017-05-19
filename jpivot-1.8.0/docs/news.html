@@ -1,0 +1,478 @@
+<html xmlns:tl="http://www.tonbeller.com/jpivot/documentation/layout">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    
+<title>JPivot - News</title>
+    
+<style type="text/css">
+      @import url("./style/maven.css");
+    </style>
+    
+    
+<meta name="author" value="Andreas Voss">
+  
+</head>
+
+  
+<body class="composite" marginwidth="0" marginheight="0">
+    
+<div id="banner">
+      
+<table border="0" cellspacing="0" cellpadding="8" width="100%">
+        
+<tr>
+          
+<td>
+            <strong>JPivot</strong>
+          </td>
+          <td>
+            
+<div align="right">
+              
+<a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=58645&type=4" width="125" height="37" border="0" alt="SourceForge.net Logo"></a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<div id="breadcrumbs">
+      
+<table border="0" cellspacing="0" cellpadding="4" width="100%">
+        
+<tr>
+          
+<td>Version 1.8.0 (Mon Mar 17 14:53:21 CET 2008)</td>
+          <td>
+            
+<div align="right">
+                
+<a href="http://www.tonbeller.com">Tonbeller</a>
+              | <a href="http://sourceforge.net/projects/jpivot/">JPivot</a>
+              | <a href="http://sourceforge.net/projects/mondrian">Mondrian</a>
+            
+</div>
+          
+</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+    
+<table border="0" cellspacing="0" cellpadding="8" width="100%" height="80%" id="main">
+      
+<tr valign="top">
+        
+<td id="leftcol" width="20%">
+          
+<div id="navcolumn">
+            
+<div xmlns:lxslt="http://xml.apache.org/xslt">
+<strong>JPivot</strong>
+  
+<div class="menuentry">
+<a href="index.html">Home</a>
+</div>
+
+
+  
+<div class="menuentry">
+<a href="http://sourceforge.net/projects/jpivot">Project Page</a>
+</div>
+  
+<div class="menuentry">
+<a href="changelog.html">Changelog</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<a href="temp-N10078.html">Architecture Overview</a>
+</div>
+
+
+ 
+<div class="menuentry">
+<b>News</b>
+</div>
+
+ 
+<div class="menuentry">
+<a href="temp-N101DC.html">XML/A</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="temp-N101F1.html">Screenshots</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="contribute.html">Contribute</a>
+</div>
+  
+<div class="menuentry">
+<a href="pdf-fonts">FOP Fonts Howto</a>
+</div>
+  
+<div class="menuentry">
+<a href="groovy">Groovy Scriptable DS</a>
+</div>
+
+  
+<div class="menuentry">
+<a href="wcf/index.html">WCF</a>
+</div>
+  
+<div class="menuentry">
+<a href="junit/index.html">Unit Tests</a>
+</div>
+  
+<div class="menuentry">
+<a href="api/index.html">Java Doc</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/jpivot-tags-en.html">JPivot Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="tags/wcf-tags-en.html">WCF Tags</a>
+</div>
+  
+<div class="menuentry">
+<a href="mondrian-schema/index.html">Mondrian Schema Plugin</a>
+</div>
+
+
+</div>
+          
+</div>
+        
+</td>
+        <td>
+          
+<h2>News</h2>
+          
+   
+<h2>New in version 1.8</h2>
+   
+<ul>
+     
+<li>Synchronized to Mondrian 3.0.0 code base</li>
+     
+<li>Fixed several bugs (see changelog for details)</li>
+     
+<li>User can choose which properties shall be displayed (contributed by kunarief)</li>
+   
+</ul>
+   
+   
+<h2>New in version 1.7</h2>
+   
+<ul>
+     
+<li>Synchronized with Mondrian 2.3.2.8944, fixes a couple of compatibility Problems (Mondrian API changed)</li>
+     
+<li>Currently requires JDK1.5 because Mondrian 2.3.2 requires it. Probably future versions will run with 1.4 again</li>
+     
+<li>Groovy Scriptable Datasources - thanks to Luca Barozzi, Engineering Ingegneria Informatica S.p.A.</li>
+     
+<li>XMLA did not work with Mondrian in 1.6 (thanks to Richard Emberson)</li>
+   
+</ul>
+
+   
+<h2>New in version 1.6</h2>
+   
+<ul>
+     
+<li>Contains new Mondrian version 2.2.1</li>
+     
+<li>Custom PDF Font Support (provided by Ati)</li>
+
+<li>2006-11-09 14:11 - synchronized with tonbeller cvs changes</li>
+
+<li>2006-10-26 11:34 - fixed Date Header bug</li>
+
+<li>2006-10-19 12:31 - Calculated Members whose name starts with a '.' are not displayed in the navigator</li>
+
+<li>2006-09-19 15:18 - SplitQueryTag</li>
+
+<li>2006-06-23 07:22 - Fix bug in Propertis</li>
+
+<li>2006-06-02 15:56 - Member properties with null value can be used as parameter</li>
+
+<li>2006-05-05 13:10 - new Tree mode which fetches children only when they are needed</li>
+
+<li>2006-05-04 08:50 - Dont try to understand the query, take values from result</li>
+
+<li>2006-04-28 13:54 - Hide ALL-Member in "level mode" unless its on an axis</li>
+
+<li>2006-04-05 12:07 - fix ClassCastEx with parameters</li>
+
+<li>2006-03-10 09:05 - fix typo in taglib uri</li>
+
+<li>2006-02-06 14:39 - more logging</li>
+
+<li>2006-02-06 14:09 - no message</li>
+
+<li>2006-02-06 13:04 - fixed the way the jdbc driver, datasource etc is found</li>
+
+<li>2006-02-06 12:38 - new Bookmark test</li>
+
+<li>2006-02-02 17:42 - fix bookmark and topcount</li>
+   
+</ul>
+   
+<h2>New in version 1.5</h2>
+   
+<ul>
+     
+<li>Full support for Websphere and BEA</li>
+     
+<li>Contains new Mondrian version with great performance optimizations</li>
+     
+<li>installable as Portlet (see CVS)</li>
+     
+<li>many bugfixes, see <a href="changelog.html">changelog</a> for details</li>
+   
+</ul>
+
+   
+<h2>New in version 1.4</h2>
+   
+<ul>
+     
+<li>Runs with BEA now (most likely)</li>
+     
+<li>Open CVS</li>
+     
+<li>Many more WCF Tests available</li>
+   
+</ul>
+
+   
+<h2>New in version 1.3</h2>
+   
+<ul>
+     
+<li>native XMLA access, i.e. no Mondrian required</li>
+     
+<li>Mondrian: Error message on resultset overflow: when the resultset exceeds some limit defined
+         in mondrian.properties, an error message is displayed and the previous state is restored.
+         default is mondrian.result.limit=50000</li>
+     
+<li>Mondrian: new formatter attributes allows to format members and cells via java code</li>
+     
+<li>Mondrian: other improvements, removed CachePool (it did not do anything useful), made
+         SmartMemberReader the default (ignores largeDimensionThreasHold)</li>
+     
+<li>wcf improvements and new features, including sql tables</li>
+   
+</ul>
+
+   
+<h2>New in version 1.2.1</h2>
+   
+<h3>PDF Improvements</h3>
+   Bugfix &amp; more options from Print Property dialog are supported
+
+   <h3>Mondrian Improvements</h3>
+   NON EMPTY Crossjoin optimization included. Crossjoin of large sparsed
+   sets resulted in OutOfMemoryException before.
+
+
+   <h2>New in version 1.2.0</h2>
+    
+<h3>Excel and PDF Support</h3>
+        contributed Excel/PDF by Ati (uramisten) - thanks a lot.
+        Includes other fixes too, see
+        <a href="http://sourceforge.net/forum/message.php?msg_id=2590176">forum</a>.
+
+    <h3>OLAP Navigator</h3>
+        The navigator now groups large amounts of Members,
+        e.g. the custmer names in the foodmart example.
+    <h3>Integration with JavaServer Faces</h3>
+        WFC (and JPivot) interoperate with
+        <a href="http://java.sun.com/j2ee/javaserverfaces/overview.html">JavaServer Faces</a>.
+        See examples in WCF download for details.
+
+    <h3>EL Syntax changed</h3>
+        The Syntax of the WCF Expression Language (actually its based on
+        jakarta BeanUtils) has changed from <tt>${expr}</tt> to
+        <tt>#{expr}</tt> so it cooperates from the expression language
+        available in Tomcat 5 / JSP 2.0.
+        <p></p>
+        So with JSP 2.0 you should use <code>#{}</code> notation to define
+        expressions for WCF attributes and <code>${}</code> to define
+        JSP EL expressions.
+        <p></p>
+        JSP EL expressions can not be used with WCF tags currently, all
+        tag attributes have their <code>rtexprvalue</code> set to false.
+        There may be a twin library supporting JSP EL expressions in
+        the future (similar to the twin libraries in JSTL, e.g. core
+        and core_rt).
+
+    <h3>Static accessor for RequestContext</h3>
+      RequestContext has a static <tt>instance()</tt> method that returns
+          the current instance (using java.lang.ThreadLocal). This seems to
+          be safe since JSF uses this mechanism too
+
+    <h3>actionReference in XML form descriptions</h3>
+    Form handling has been simplified, see example. In the XML file
+          describing the HTML form, the &lt;button ...&gt; element
+          accepts an element named "actionReference". The value of this
+          attribute is interpreted as the name of a function, which
+          is called when the user presses the button. The signature of
+          the function is <tt>void foo(RequestContext context) throws Exception;</tt>
+
+    
+<h2>New in version 1.1.0</h2>
+
+    
+<h3>Mondrian improvements</h3>
+
+    Uses the up-to-date Mondrian version with many bugfixes and improvements:
+    <ul>
+      
+<li>uses less memory (only needs 1/5 of previous Mondrian versions)</li>
+      
+<li>Mondrian is 2 times upto 20 times faster depending on the query. Most speed
+          improvement when using <tt>aggregate</tt>
+</li>
+      
+<li>new caching strategy - new cache keeps as much items as possible in memory</li>
+    
+</ul>
+    See installation notes about how to set the JVM parameters -Xms and -Xmx.
+
+    <h3>New navigation Code</h3>
+    The new navigation code fixes some bugs and shortcomings. Also it reduces
+    dependencies to mondrian. So with  the new navigation code it should be
+    easier to support other OLAP servers like XMLA and JOLAP.
+
+    <h3>Drill Thru</h3>
+    Individual Columns maybe selected in drill-thru table.
+
+    <h3>Bookmark Support</h3>
+    com.tonbeller.wcf.bookmark.BookmarkManger has static Methods to collect and
+    restore the state of all objects in the session. Support is provided for
+    the query with its navigations, the table settings and chart via its configuration
+    dialog. All properties from configuration dialogs may be stored in a bookmark
+    if the <tt>bookmark</tt> attribute of the &lt;wcf:form...&gt; tag is set
+    to true.
+
+    <h3>Parameter Support</h3>
+
+    MDX Parameter may be passed as HTTP Parameters. The new JPivot
+    tag <tt>clickable</tt> is nested inside the <tt>table</tt> tag
+    and specifies a dimension, level or single member that shall be clickable (i.e.
+    members are rendered with hyperlinks). The <tt>setParam</tt>
+    tag maybe used to extract the HTTP parameter, parse its
+    value and update a parameter of the MDX query. Finally
+    its possible to display the current parameter values
+    via JSTL tags. See jpivot taglib docs and example in test subdirectory
+    for details.
+
+    <h2>Version 1.0.2</h2>
+    
+<h3>Charting Support</h3>
+
+    Robin has integrated jfreechart into jpivot with
+    support for many different chart styles (bar chart, pie chart etc, 2D 3D).
+    There is also a dialog to configure the chart. See screenshots for an
+    example.
+
+    <h3>Drill Thru support</h3>
+    Does not seem to work with MS Access?
+
+   <h3>Member Properties</h3>
+
+   JPivot supports member properties now. There is a toolbar button that enables / disables
+   display of properties in the table. Also there are a few predefined properties that
+   are rendered in a special manner:
+   <table border="1">
+     
+<tr>
+       
+<th>Name</th>
+       <th>Value</th>
+       <th>Description</th>
+     
+</tr>
+     
+<tr>
+       
+<td>style</td>
+       <td>red|green|yellow</td>
+       <td>renders the Member in that color</td>
+     
+</tr>
+     
+<tr>
+       
+<td>link</td>
+       <td>an url</td>
+       <td>creates a hyperlink on the member</td>
+     
+</tr>
+     
+<tr>
+       
+<td>arrow</td>
+       <td>up|down|blank</td>
+       <td>paints an arrow image</td>
+     
+</tr>
+     
+<tr>
+       
+<td>image</td>
+       <td>an uri. If the uri starts with "/" the context name will be prepended</td>
+       <td>paints image</td>
+     
+</tr>
+   
+</table>
+
+   
+<h3>Tag Library Documentation</h3>
+   All WCF and jpivot tags have been documented (see table of contents on the left).
+
+ 
+        </td>
+      
+</tr>
+    
+</table>
+
+    
+<div id="footer">
+      
+<table border="0" cellspacing="0" cellpadding="4">
+        
+<tr>
+          
+<td>&copy; 2003, TONBELLER AG</td>
+        
+</tr>
+      
+</table>
+    
+</div>
+
+  
+</body>
+
+</html>

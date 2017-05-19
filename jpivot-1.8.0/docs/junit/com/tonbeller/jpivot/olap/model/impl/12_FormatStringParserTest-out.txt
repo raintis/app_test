@@ -1,0 +1,2 @@
+[JPivot] 17 Mrz 2008 14:53:01,465 ERROR [Session ] com.tonbeller.jpivot.olap.model.impl.FormatStringParser#getCellFormatter: Could not find a property definition for exit = hhhmmss
+

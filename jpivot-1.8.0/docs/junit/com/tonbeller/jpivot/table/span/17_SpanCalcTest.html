@@ -1,0 +1,345 @@
+<html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Unit Test Results: com.tonbeller.jpivot.table.span.SpanCalcTest</title>
+<link rel="stylesheet" type="text/css" title="Style" href="../../../../../stylesheet.css">
+<script type="text/javascript" language="JavaScript">
+        var TestCases = new Array();
+        var cur;
+        
+    cur = TestCases['com.tonbeller.jpivot.table.span.SpanCalcTest'] = new Array();
+    
+        cur['ant.core.lib'] = 'C:\\Java\\apache-ant-1.7.0\\lib\\ant.jar';
+    
+        cur['ant.file'] = 'C:\\dev\\jpivot\\jpivot\\build.xml';
+    
+        cur['ant.file.JPivot'] = 'C:\\dev\\jpivot\\jpivot\\build.xml';
+    
+        cur['ant.home'] = 'C:\\Java\\apache-ant-1.7.0';
+    
+        cur['ant.java.version'] = '1.5';
+    
+        cur['ant.library.dir'] = 'C:\\Java\\apache-ant-1.7.0\\lib';
+    
+        cur['ant.project.name'] = 'JPivot';
+    
+        cur['ant.version'] = 'Apache Ant version 1.7.0 compiled on December 13 2006';
+    
+        cur['app.path'] = '/jpivot';
+    
+        cur['awt.toolkit'] = 'sun.awt.windows.WToolkit';
+    
+        cur['basedir'] = 'C:\\dev\\jpivot\\jpivot';
+    
+        cur['beanutils.home'] = '../jpivot_repository/commons-beanutils-1.7.0';
+    
+        cur['build.home'] = 'C:\\dev\\jpivot\\jpivot/build';
+    
+        cur['catalina.home'] = 'C:/Java/apache-tomcat-5.5.20';
+    
+        cur['catalog.uri'] = 'file:///C:\\dev\\jpivot\\jpivot/build/web/WEB-INF/queries/FoodMart.xml';
+    
+        cur['collections.home'] = '../jpivot_repository/commons-collections-3.1';
+    
+        cur['com.tonbeller.environment'] = 'test';
+    
+        cur['compile.debug'] = 'true';
+    
+        cur['compile.deprecation'] = 'false';
+    
+        cur['compile.optimize'] = 'true';
+    
+        cur['compile.source'] = '1.4';
+    
+        cur['compile.target'] = '1.4';
+    
+        cur['dbcp.home'] = '../jpivot_repository/commons-dbcp-1.2.1';
+    
+        cur['digester.home'] = '../jpivot_repository/commons-digester-1.5';
+    
+        cur['dist.home'] = 'C:\\dev\\jpivot\\jpivot/dist';
+    
+        cur['dom4j.home'] = '../jpivot_repository/dom4j-1.4';
+    
+        cur['file.encoding'] = 'Cp1252';
+    
+        cur['file.encoding.pkg'] = 'sun.io';
+    
+        cur['file.separator'] = '\\';
+    
+        cur['fop.home'] = '../jpivot_repository/fop-0.20.5';
+    
+        cur['groovy.home'] = '../jpivot_repository/groovy';
+    
+        cur['jai.home'] = '../jpivot_repository/jai-1_1_2';
+    
+        cur['java.awt.graphicsenv'] = 'sun.awt.Win32GraphicsEnvironment';
+    
+        cur['java.awt.printerjob'] = 'sun.awt.windows.WPrinterJob';
+    
+        cur['java.class.path'] = 'C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\activation.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\avalon-framework-cvs-20020806.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\batik.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-beanutils-1.6.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-collections-3.1.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-dbcp-1.2.1.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-digester-1.5.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-fileupload-1.0.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-logging-1.0.4.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-math-1.0.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-pool-1.2.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\commons-vfs.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\dom4j.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\eigenbase-properties.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\eigenbase-resgen.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\eigenbase-xom.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\fop.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\groovy-all-1.0-jsr-03.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jai_codec.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jai_core.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jakarta-regexp-1.2.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\javacup.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jaxen-full.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jcommon-1.0.0.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jfreechart-1.0.0.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jsf-api.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\jstl.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\junit.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\log4j-1.2.8.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\mail.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\mondrian.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\saaj-api.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\saaj-ri.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\saxpath.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\standard.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\tbutils-wcf.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\lib\\wcf.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\classes;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\commons-el.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\db2fs.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\db2java.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\db2jcc.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\derbyclient.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\jasper-compiler-jdt.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\jasper-compiler.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\jasper-runtime.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\jsp-api.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\msbase.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\mssqlserver.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\msutil.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\mysql-connector-java-3.1.12-bin.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\naming-factory-dbcp.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\naming-factory.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\naming-resources.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\ojdbc14.jar;C:\\Java\\apache-tomcat-5.5.20\\common\\lib\\servlet-api.jar;C:\\dev\\jpivot\\jpivot\\build\\web\\WEB-INF\\classes;C:\\dev\\jpivot\\jpivot\\build\\junit\\classes;c:\\Java\\mysql-connector-java-3.1.12\\mysql-connector-java-3.1.12-bin.jar;C:\\Java\\apache-ant-1.7.0\\lib\\ant-launcher.jar;C:\\Java\\apache-ant-1.7.0\\lib\\ant.jar;C:\\Java\\apache-ant-1.7.0\\lib\\ant-junit.jar';
+    
+        cur['java.class.version'] = '49.0';
+    
+        cur['java.endorsed.dirs'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\endorsed';
+    
+        cur['java.ext.dirs'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\ext';
+    
+        cur['java.home'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre';
+    
+        cur['java.io.tmpdir'] = 'C:\\Temp\\';
+    
+        cur['java.library.path'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre\\bin;.;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\Programme\\Java\\jdk1.5.0_15\\bin;C:\\Java\\apache-ant-1.7.0\\bin;C:\\Java\\apache-maven-2.0.8\\bin;C:\\Programme\\Java\\j2sdk1.4.2_17\\bin;C:\\Java\\apache-ant-1.6.5\\bin;C:\\Programme\\IBM\\GSK5\\lib;C:\\Programme\\IBM\\SDP70\\rpt\\DCI\\rpa_prod\\tivoli_comp\\bin\\w32-ix86;C:\\Programme\\IBM\\SDP70Shared\\AgentController\\bin;C:\\Programme\\Java\\jdk1.6.0_05\\bin;C:\\Java\\bin;C:\\Programme\\cvsnt;C:\\Perl\\bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\Programme\\IBM\\Installation Manager\\eclipse\\lib;C:\\Programme\\Rational\\common';
+    
+        cur['java.runtime.name'] = 'Java(TM) 2 Runtime Environment, Standard Edition';
+    
+        cur['java.runtime.version'] = '1.5.0_15-b04';
+    
+        cur['java.specification.name'] = 'Java Platform API Specification';
+    
+        cur['java.specification.vendor'] = 'Sun Microsystems Inc.';
+    
+        cur['java.specification.version'] = '1.5';
+    
+        cur['java.vendor'] = 'Sun Microsystems Inc.';
+    
+        cur['java.vendor.url'] = 'http://java.sun.com/';
+    
+        cur['java.vendor.url.bug'] = 'http://java.sun.com/cgi-bin/bugreport.cgi';
+    
+        cur['java.version'] = '1.5.0_15';
+    
+        cur['java.vm.info'] = 'mixed mode, sharing';
+    
+        cur['java.vm.name'] = 'Java HotSpot(TM) Client VM';
+    
+        cur['java.vm.specification.name'] = 'Java Virtual Machine Specification';
+    
+        cur['java.vm.specification.vendor'] = 'Sun Microsystems Inc.';
+    
+        cur['java.vm.specification.version'] = '1.0';
+    
+        cur['java.vm.vendor'] = 'Sun Microsystems Inc.';
+    
+        cur['java.vm.version'] = '1.5.0_15-b04';
+    
+        cur['jboss.deploy'] = 'C:/jboss-4.0.2/server/default/deploy';
+    
+        cur['jboss.home'] = 'C:/jboss-4.0.2';
+    
+        cur['jboss-portal.deploy'] = 'C:/jboss-4.0.2/server/default/deploy/jboss-portal.sar';
+    
+        cur['jdbc.driver'] = 'com.mysql.jdbc.Driver';
+    
+        cur['jdbc.jardir'] = 'c:/Java/mysql-connector-java-3.1.12';
+    
+        cur['jdbc.password'] = '';
+    
+        cur['jdbc.url'] = 'jdbc:mysql://localhost/foodmart';
+    
+        cur['jdbc.user'] = 'root';
+    
+        cur['jfreechart.home'] = '../jpivot_repository/jfreechart-1.0.0';
+    
+        cur['jpivot.version'] = '1.8.0';
+    
+        cur['jsf.home'] = '../jpivot_repository/jsf-1_1';
+    
+        cur['jstl.home'] = '../jpivot_repository/jakarta-taglibs-standard-1.0.6';
+    
+        cur['junit.home'] = '../jpivot_repository/junit-3.8.1';
+    
+        cur['jwsdp.home'] = '../jpivot_repository/jwsdp-1.1';
+    
+        cur['line.separator'] = ' ';
+    
+        cur['log4j.home'] = '../jpivot_repository/jakarta-log4j-1.2.8';
+    
+        cur['logging.home'] = '../jpivot_repository/commons-logging-1.0.4';
+    
+        cur['manager.password'] = 'manager';
+    
+        cur['manager.url'] = 'http://localhost:8080/manager';
+    
+        cur['manager.username'] = 'manager';
+    
+        cur['math.home'] = '../jpivot_repository/commons-math-1.0';
+    
+        cur['mondrian.home'] = '../jpivot_repository/mondrian-3.0.0';
+    
+        cur['mondrian.version'] = '3.0.0';
+    
+        cur['os.arch'] = 'x86';
+    
+        cur['os.name'] = 'Windows XP';
+    
+        cur['os.version'] = '5.1';
+    
+        cur['path.separator'] = ';';
+    
+        cur['pool.home'] = '../jpivot_repository/commons-pool-1.2';
+    
+        cur['regexp.home'] = '../jpivot_repository/jakarta-regexp-1.2';
+    
+        cur['repository.home'] = '../jpivot_repository';
+    
+        cur['src.home'] = 'C:\\dev\\jpivot\\jpivot/src';
+    
+        cur['sun.arch.data.model'] = '32';
+    
+        cur['sun.boot.class.path'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\rt.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\i18n.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\sunrsasign.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\jsse.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\jce.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\lib\\charsets.jar;C:\\Programme\\Java\\jdk1.5.0_15\\jre\\classes';
+    
+        cur['sun.boot.library.path'] = 'C:\\Programme\\Java\\jdk1.5.0_15\\jre\\bin';
+    
+        cur['sun.cpu.endian'] = 'little';
+    
+        cur['sun.cpu.isalist'] = '';
+    
+        cur['sun.desktop'] = 'windows';
+    
+        cur['sun.io.unicode.encoding'] = 'UnicodeLittle';
+    
+        cur['sun.java.launcher'] = 'SUN_STANDARD';
+    
+        cur['sun.jnu.encoding'] = 'Cp1252';
+    
+        cur['sun.management.compiler'] = 'HotSpot Client Compiler';
+    
+        cur['sun.os.patch.level'] = 'Service Pack 2';
+    
+        cur['test.dir'] = 'C:\\dev\\jpivot\\jpivot/tests';
+    
+        cur['test.server'] = 'localhost:8080';
+    
+        cur['tests.xmla.skip'] = 'true';
+    
+        cur['user.country'] = 'DE';
+    
+        cur['user.dir'] = 'C:\\dev\\jpivot\\jpivot';
+    
+        cur['user.home'] = 'C:\\Dokumente und Einstellungen\\av';
+    
+        cur['user.language'] = 'de';
+    
+        cur['user.name'] = 'av';
+    
+        cur['user.timezone'] = '';
+    
+        cur['user.variant'] = '';
+    
+        cur['viewcvs'] = 'http://jpivot.cvs.sourceforge.net/jpivot';
+    
+        cur['wcf.dist'] = 'C:\\dev\\jpivot\\jpivot/../wcf/dist';
+    
+        cur['xalan.home'] = '../jpivot_repository/xalan-j_2_7_0';
+    </script><script type="text/javascript" language="JavaScript">
+        function displayProperties (name) {
+          var win = window.open('','JUnitSystemProperties','scrollbars=1,resizable=1');
+          var doc = win.document;
+          doc.open();
+          doc.write("<html><head><title>Properties of " + name + "</title>");
+          doc.write("<style type=\"text/css\">");
+          doc.write("body {font:normal 68% verdana,arial,helvetica; color:#000000; }");
+          doc.write("table tr td, table tr th { font-size: 68%; }");
+          doc.write("table.properties { border-collapse:collapse; border-left:solid 1 #cccccc; border-top:solid 1 #cccccc; padding:5px; }");
+          doc.write("table.properties th { text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#eeeeee; }");
+          doc.write("table.properties td { font:normal; text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#fffffff; }");
+          doc.write("h3 { margin-bottom: 0.5em; font: bold 115% verdana,arial,helvetica }");
+          doc.write("</style>");
+          doc.write("</head><body>");
+          doc.write("<h3>Properties of " + name + "</h3>");
+          doc.write("<div align=\"right\"><a href=\"javascript:window.close();\">Close</a></div>");
+          doc.write("<table class='properties'>");
+          doc.write("<tr><th>Name</th><th>Value</th></tr>");
+          for (prop in TestCases[name]) {
+            doc.write("<tr><th>" + prop + "</th><td>" + TestCases[name][prop] + "</td></tr>");
+          }
+          doc.write("</table>");
+          doc.write("</body></html>");
+          doc.close();
+          win.focus();
+        }
+      
+      </script>
+</head>
+<body>
+<h1>Unit Test Results</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h3>Class com.tonbeller.jpivot.table.span.SpanCalcTest</h3>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th nowrap="nowrap">Time(s)</th><th nowrap="nowrap">Time Stamp</th><th>Host</th>
+</tr>
+<tr valign="top" class="Pass">
+<td><a title="Display all tests" href="17_SpanCalcTest.html">SpanCalcTest</a></td><td><a title="Display all tests" href="17_SpanCalcTest.html">17</a></td><td>0</td><td>0</td><td>0.235</td><td>2008-03-17T13:53:04</td><td>pcav</td>
+</tr>
+</table>
+<h2>Tests</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap="nowrap">Time(s)</th>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testPlausibility"></a>testPlausibility</td><td>Success</td><td></td><td>0.094</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testTriangle_AN_BN"></a>testTriangle_AN_BN</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testTriangle_AH_BH"></a>testTriangle_AH_BH</td><td>Success</td><td></td><td>0.015</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testTriangle_AP_BP"></a>testTriangle_AP_BP</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testTriangle_AH_BP"></a>testTriangle_AH_BP</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testTriangle_AHP_BHP"></a>testTriangle_AHP_BHP</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testHierarchicalPositionSpans1"></a>testHierarchicalPositionSpans1</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testHierarchicalPositionSpans2"></a>testHierarchicalPositionSpans2</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testBug1"></a>testBug1</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testMultiSpan1"></a>testMultiSpan1</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testMultiSpan2"></a>testMultiSpan2</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testInitializer"></a>testInitializer</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testAddAllEqualToHierarchy"></a>testAddAllEqualToHierarchy</td><td>Success</td><td></td><td>0.016</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testAddHierarchiesToHierarchy"></a>testAddHierarchiesToHierarchy</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testAddLevelsToHierarchy"></a>testAddLevelsToHierarchy</td><td>Success</td><td></td><td>0.015</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testCreatePositionHeader1"></a>testCreatePositionHeader1</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="testCreatePositionHeader2"></a>testCreatePositionHeader2</td><td>Success</td><td></td><td>0.000</td>
+</tr>
+</table>
+<div class="Properties">
+<a href="javascript:displayProperties('com.tonbeller.jpivot.table.span.SpanCalcTest');">
+                    Properties &raquo;
+                </a>
+</div>
+</body>
+</html>
