@@ -1,20 +1,19 @@
 package com.my.autocloseable;
 
 /**
- * description:ÊµÏÖ½Ó¿ÚAutoCloseable´ú±íÎª¿É¹Ø±ÕµÄ×ÊÔ´£¬ÄÇÃ´ÔÚtryÓï¾äÊ±Ôö¼ÓÀ¨ºÅ½øĞĞ°ü×°£¬×îºóÒ»¾äÎŞĞèÔö¼Ó·ÖºÅ£¬
- * ÄÇÃ´²»ÓÃÔÙÊ¹ÓÃfinallyÀ´½øĞĞ×ÊÔ´¹Ø±Õ£¬¼ò»¯´úÂëÒ²·ÀÖ¹Íü¼ÇµÄ×ÊÔ´¹Ø±Õ
+ * description:å®ç°æ¥å£AutoCloseableä»£è¡¨ä¸ºå¯å…³é—­çš„èµ„æºï¼Œé‚£ä¹ˆåœ¨tryè¯­å¥æ—¶å¢åŠ æ‹¬å·è¿›è¡ŒåŒ…è£…ï¼Œæœ€åä¸€å¥æ— éœ€å¢åŠ åˆ†å·ï¼Œ
+ * é‚£ä¹ˆä¸ç”¨å†ä½¿ç”¨finallyæ¥è¿›è¡Œèµ„æºå…³é—­ï¼Œç®€åŒ–ä»£ç ä¹Ÿé˜²æ­¢å¿˜è®°çš„èµ„æºå…³é—­
  * @author Administrator
  *
  */
 public class MyResource implements AutoCloseable{
 
-	@Override
 	public void close() throws Exception {
-		System.out.println("¹Ø±Õ×ÊÔ´");
+		System.out.println("å…³é—­èµ„æº");
 	}
 
 	public void readResource(){
-		System.out.println("¶ÁÈ¡×ÊÔ´");
+		System.out.println("è¯»å–èµ„æº");
 	}
 	
 	
