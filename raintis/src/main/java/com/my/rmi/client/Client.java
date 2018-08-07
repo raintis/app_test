@@ -12,7 +12,7 @@ public class Client {
 	public static void main(String[] args) {
         try { 
             UserService userService = (UserService) Naming.lookup("rmi://localhost:9090/user"); 
-            System.out.println(userService.getUserByid(1000l)); 
+            System.out.println(userService.getUserByid(1000L)); 
         } catch (NotBoundException e) { 
             e.printStackTrace(); 
         } catch (MalformedURLException e) { 

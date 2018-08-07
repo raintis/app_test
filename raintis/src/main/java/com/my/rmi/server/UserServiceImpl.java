@@ -19,6 +19,7 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService{
 	private static final long serialVersionUID = 1L;
 
 
+	@Override
 	public User getUserByid(long id) throws RemoteException {
 		// TODO Auto-generated method stub
 		 User user = new User();

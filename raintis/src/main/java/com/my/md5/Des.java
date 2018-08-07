@@ -19,9 +19,9 @@ public class Des {
     private final static String DES = "DES";  
        
     /** 
-     * Description ¸ù¾Ý¼üÖµ½øÐÐ¼ÓÃÜ 
+     * Description ï¿½ï¿½ï¿½Ý¼ï¿½Öµï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ 
      * @param data  
-     * @param key  ¼ÓÃÜ¼übyteÊý×é 
+     * @param key  ï¿½ï¿½ï¿½Ü¼ï¿½byteï¿½ï¿½ï¿½ï¿½ 
      * @return 
      * @throws Exception 
      */  
@@ -32,17 +32,18 @@ public class Des {
     }  
    
     /** 
-     * Description ¸ù¾Ý¼üÖµ½øÐÐ½âÃÜ 
+     * Description ï¿½ï¿½ï¿½Ý¼ï¿½Öµï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ 
      * @param data 
-     * @param key  ¼ÓÃÜ¼übyteÊý×é 
+     * @param key  ï¿½ï¿½ï¿½Ü¼ï¿½byteï¿½ï¿½ï¿½ï¿½ 
      * @return 
      * @throws IOException 
      * @throws Exception 
      */  
     public static String decrypt(String data, String key) throws IOException,  
             Exception {  
-        if (data == null)  
-            return null;  
+        if (data == null) {
+			return null;
+		}  
         BASE64Decoder decoder = new BASE64Decoder();  
         byte[] buf = decoder.decodeBuffer(data);  
         byte[] bt = decrypt(buf,key.getBytes());  
@@ -50,27 +51,27 @@ public class Des {
     }  
    
     /** 
-     * Description ¸ù¾Ý¼üÖµ½øÐÐ¼ÓÃÜ 
+     * Description ï¿½ï¿½ï¿½Ý¼ï¿½Öµï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ 
      * @param data 
-     * @param key  ¼ÓÃÜ¼übyteÊý×é 
+     * @param key  ï¿½ï¿½ï¿½Ü¼ï¿½byteï¿½ï¿½ï¿½ï¿½ 
      * @return 
      * @throws Exception 
      */  
     private static byte[] encrypt(byte[] data, byte[] key) throws Exception {  
-        // Éú³ÉÒ»¸ö¿ÉÐÅÈÎµÄËæ»úÊýÔ´  
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´  
         SecureRandom sr = new SecureRandom();  
    
-        // ´ÓÔ­Ê¼ÃÜÔ¿Êý¾Ý´´½¨DESKeySpec¶ÔÏó  
+        // ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½DESKeySpecï¿½ï¿½ï¿½ï¿½  
         DESKeySpec dks = new DESKeySpec(key);  
    
-        // ´´½¨Ò»¸öÃÜÔ¿¹¤³§£¬È»ºóÓÃËü°ÑDESKeySpec×ª»»³ÉSecretKey¶ÔÏó  
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DESKeySpec×ªï¿½ï¿½ï¿½ï¿½SecretKeyï¿½ï¿½ï¿½ï¿½  
         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES);  
         SecretKey securekey = keyFactory.generateSecret(dks);  
    
-        // Cipher¶ÔÏóÊµ¼ÊÍê³É¼ÓÃÜ²Ù×÷  
+        // Cipherï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½Ü²ï¿½ï¿½ï¿½  
         Cipher cipher = Cipher.getInstance(DES);  
    
-        // ÓÃÃÜÔ¿³õÊ¼»¯Cipher¶ÔÏó  
+        // ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½Ê¼ï¿½ï¿½Cipherï¿½ï¿½ï¿½ï¿½  
         cipher.init(Cipher.ENCRYPT_MODE, securekey, sr);  
    
         return cipher.doFinal(data);  
@@ -78,27 +79,27 @@ public class Des {
        
        
     /** 
-     * Description ¸ù¾Ý¼üÖµ½øÐÐ½âÃÜ 
+     * Description ï¿½ï¿½ï¿½Ý¼ï¿½Öµï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ 
      * @param data 
-     * @param key  ¼ÓÃÜ¼übyteÊý×é 
+     * @param key  ï¿½ï¿½ï¿½Ü¼ï¿½byteï¿½ï¿½ï¿½ï¿½ 
      * @return 
      * @throws Exception 
      */  
     private static byte[] decrypt(byte[] data, byte[] key) throws Exception {  
-        // Éú³ÉÒ»¸ö¿ÉÐÅÈÎµÄËæ»úÊýÔ´  
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´  
         SecureRandom sr = new SecureRandom();  
    
-        // ´ÓÔ­Ê¼ÃÜÔ¿Êý¾Ý´´½¨DESKeySpec¶ÔÏó  
+        // ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½DESKeySpecï¿½ï¿½ï¿½ï¿½  
         DESKeySpec dks = new DESKeySpec(key);  
    
-        // ´´½¨Ò»¸öÃÜÔ¿¹¤³§£¬È»ºóÓÃËü°ÑDESKeySpec×ª»»³ÉSecretKey¶ÔÏó  
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DESKeySpec×ªï¿½ï¿½ï¿½ï¿½SecretKeyï¿½ï¿½ï¿½ï¿½  
         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES);  
         SecretKey securekey = keyFactory.generateSecret(dks);  
    
-        // Cipher¶ÔÏóÊµ¼ÊÍê³É½âÃÜ²Ù×÷  
+        // Cipherï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½  
         Cipher cipher = Cipher.getInstance(DES);  
    
-        // ÓÃÃÜÔ¿³õÊ¼»¯Cipher¶ÔÏó  
+        // ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½Ê¼ï¿½ï¿½Cipherï¿½ï¿½ï¿½ï¿½  
         cipher.init(Cipher.DECRYPT_MODE, securekey, sr);  
    
         return cipher.doFinal(data);  
@@ -106,7 +107,7 @@ public class Des {
       
       
     /** 
-     * Description »ñÈ¡×Ö·û´®MD5Öµ 
+     * Description ï¿½ï¿½È¡ï¿½Ö·ï¿½ï¿½ï¿½MD5Öµ 
      * @param sourceStr 
      */  
     private static String MD5(String sourceStr) {  
@@ -119,10 +120,12 @@ public class Des {
             StringBuffer buf = new StringBuffer("");  
             for (int offset = 0; offset < b.length; offset++) {  
                 i = b[offset];  
-                if (i < 0)  
-                    i += 256;  
-                if (i < 16)  
-                    buf.append("0");  
+                if (i < 0) {
+					i += 256;
+				}  
+                if (i < 16) {
+					buf.append("0");
+				}  
                 buf.append(Integer.toHexString(i));  
             }  
             result = buf.toString();  
@@ -137,8 +140,8 @@ public class Des {
       
       
     public static void main(String[] args) throws Exception {  
-        String data = "{devType:\"1\",Sys:\"01\",Name:\"ÕÅÈý\",PoId:\"000002\",TarPho:\"15527609770\",Desc:\"ÕÅÈýÍµÇÔ\"}";  
-        String key = "12345678";//ÃØÔ¿  
+        String data = "{devType:\"1\",Sys:\"01\",Name:\"ï¿½ï¿½ï¿½ï¿½\",PoId:\"000002\",TarPho:\"15527609770\",Desc:\"ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½\"}";  
+        String key = "12345678";//ï¿½ï¿½Ô¿  
         long start = System.currentTimeMillis();
         String encode = encrypt(data, key);  
         System.err.println(encode);  

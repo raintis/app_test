@@ -8,14 +8,14 @@ import java.util.Map;
 import org.apache.commons.lang3.RandomStringUtils;  
   
 /** 
- * ²ÉÓÃMD5¼ÓÃÜ½âÃÜ 
+ * ï¿½ï¿½ï¿½ï¿½MD5ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ 
  * @author tfq 
  * @datetime 2011-10-13 
  */  
 public class MD5Util {  
   
     /*** 
-     * MD5¼ÓÂë Éú³É32Î»md5Âë 
+     * MD5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½32Î»md5ï¿½ï¿½ 
      */  
     public static String string2MD5(String inStr){  
         MessageDigest md5 = null;  
@@ -29,14 +29,16 @@ public class MD5Util {
         char[] charArray = inStr.toCharArray();  
         byte[] byteArray = new byte[charArray.length];  
   
-        for (int i = 0; i < charArray.length; i++)  
-            byteArray[i] = (byte) charArray[i];  
+        for (int i = 0; i < charArray.length; i++) {
+			byteArray[i] = (byte) charArray[i];
+		}  
         byte[] md5Bytes = md5.digest(byteArray);  
         StringBuffer hexValue = new StringBuffer();  
         for (int i = 0; i < md5Bytes.length; i++){  
             int val = ((int) md5Bytes[i]) & 0xff;  
-            if (val < 16)  
-                hexValue.append("0");  
+            if (val < 16) {
+				hexValue.append("0");
+			}  
             hexValue.append(Integer.toHexString(val));  
         }  
         return hexValue.toString();  
@@ -44,7 +46,7 @@ public class MD5Util {
     }  
   
     /** 
-     * ¼ÓÃÜ½âÃÜËã·¨ Ö´ÐÐÒ»´Î¼ÓÃÜ£¬Á½´Î½âÃÜ 
+     * ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ã·¨ Ö´ï¿½ï¿½Ò»ï¿½Î¼ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ 
      */   
     public static String convertMD5(String inStr){  
   
@@ -57,16 +59,16 @@ public class MD5Util {
   
     }  
   
-    // ²âÊÔÖ÷º¯Êý  
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
     public static void main(String args[]) {  
         String s = new String("tangfuqiang");  
-        System.out.println("Ô­Ê¼£º" + s);  
+        System.out.println("Ô­Ê¼ï¿½ï¿½" + s);  
         String string2MD5 = string2MD5(s);
-        System.out.println("MD5ºó£º" + string2MD5);  
+        System.out.println("MD5ï¿½ï¿½" + string2MD5);  
         String convertMD5 = convertMD5(s);
-        System.out.println("¼ÓÃÜµÄ£º" + convertMD5);  
+        System.out.println("ï¿½ï¿½ï¿½ÜµÄ£ï¿½" + convertMD5);  
         System.out.println(convertMD5.equals(convertMD5(s)));
-        System.out.println("½âÃÜµÄ£º" + convertMD5(convertMD5(s)));  
+        System.out.println("ï¿½ï¿½ï¿½ÜµÄ£ï¿½" + convertMD5(convertMD5(s)));  
         String str = "fffsfl|fdsfsdf|dfsfafaf";
         String[] splitStr = str.split("\\|");
         for(String s1:splitStr){
@@ -86,7 +88,9 @@ public class MD5Util {
         long start = System.currentTimeMillis();
         for(String s1 : cmp1){
         	for(String s2 : cmp2){
-        		if(s1.equals(s2)) break;
+        		if(s1.equals(s2)) {
+					break;
+				}
         	}
         }
         System.out.println("spanTime:" + (System.currentTimeMillis() - start));

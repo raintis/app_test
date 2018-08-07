@@ -8,6 +8,7 @@ package com.my.autocloseable;
  */
 public class MyResource implements AutoCloseable{
 
+	@Override
 	public void close() throws Exception {
 		System.out.println("关闭资源");
 	}

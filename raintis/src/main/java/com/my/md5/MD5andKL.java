@@ -3,7 +3,7 @@ package com.my.md5;
 import java.security.MessageDigest;
 
 public class MD5andKL {  
-	 // MD5¼ÓÂë¡£32Î»  
+	 // MD5ï¿½ï¿½ï¿½ë¡£32Î»  
 	 public static String MD5(String inStr) {  
 	  MessageDigest md5 = null;  
 	  try {  
@@ -16,8 +16,9 @@ public class MD5andKL {
 	  char[] charArray = inStr.toCharArray();  
 	  byte[] byteArray = new byte[charArray.length];  
 	  
-	  for (int i = 0; i < charArray.length; i++)  
-	   byteArray[i] = (byte) charArray[i];  
+	  for (int i = 0; i < charArray.length; i++) {
+		byteArray[i] = (byte) charArray[i];
+	}  
 	  
 	  byte[] md5Bytes = md5.digest(byteArray);  
 	  
@@ -25,15 +26,16 @@ public class MD5andKL {
 	  
 	  for (int i = 0; i < md5Bytes.length; i++) {  
 	   int val = ((int) md5Bytes[i]) & 0xff;  
-	   if (val < 16)  
-	    hexValue.append("0");  
+	   if (val < 16) {
+		hexValue.append("0");
+	}  
 	   hexValue.append(Integer.toHexString(val));  
 	  }  
 	  
 	  return hexValue.toString();  
 	 }  
 	  
-	 // ¿ÉÄæµÄ¼ÓÃÜËã·¨  
+	 // ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ã·¨  
 	 public static String KL(String inStr) {  
 	  // String s = new String(inStr);  
 	  char[] a = inStr.toCharArray();  
@@ -44,7 +46,7 @@ public class MD5andKL {
 	  return s;  
 	 }  
 	  
-	 // ¼ÓÃÜºó½âÃÜ  
+	 // ï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½  
 	 public static String JM(String inStr) {  
 	  char[] a = inStr.toCharArray();  
 	  for (int i = 0; i < a.length; i++) {  
@@ -54,12 +56,12 @@ public class MD5andKL {
 	  return k;  
 	 }  
 	   
-	 // ²âÊÔÖ÷º¯Êý  
+	 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 	 public static void main(String args[]) {  
 	  String s = new String("a");  
-	  System.out.println("Ô­Ê¼£º" + s);  
-	  System.out.println("MD5ºó£º" + MD5(s));  
-	  System.out.println("MD5ºóÔÙ¼ÓÃÜ£º" + KL(MD5(s)));  
-	  System.out.println("½âÃÜÎªMD5ºóµÄ£º" + JM(KL(MD5(s))));  
+	  System.out.println("Ô­Ê¼ï¿½ï¿½" + s);  
+	  System.out.println("MD5ï¿½ï¿½" + MD5(s));  
+	  System.out.println("MD5ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½Ü£ï¿½" + KL(MD5(s)));  
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ÎªMD5ï¿½ï¿½Ä£ï¿½" + JM(KL(MD5(s))));  
 	 }  
 	}  
