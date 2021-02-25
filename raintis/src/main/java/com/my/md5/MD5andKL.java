@@ -59,9 +59,9 @@ public class MD5andKL {
 	 // ����������  
 	 public static void main(String args[]) {  
 	  String s = new String("a");  
-	  System.out.println("ԭʼ��" + s);  
-	  System.out.println("MD5��" + MD5(s));  
-	  System.out.println("MD5���ټ��ܣ�" + KL(MD5(s)));  
-	  System.out.println("����ΪMD5��ģ�" + JM(KL(MD5(s))));  
+	  System.out.println("原值-->" + s);  
+	  System.out.println("MD5值-->" + MD5(s));  
+	  System.out.println("MD5还原-->" + KL(MD5(s)));  
+	  System.out.println("����ΪMD5��ģ�-->" + JM(KL(MD5(s))));  
 	 }  
 	}  

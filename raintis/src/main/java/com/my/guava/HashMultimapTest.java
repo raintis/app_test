@@ -1,7 +1,9 @@
 package com.my.guava;
 
 import java.util.Arrays;
+import java.util.List;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.HashMultimap;
 
 public class HashMultimapTest {
@@ -28,5 +30,8 @@ public class HashMultimapTest {
 			System.out.print(e.getKey() + "-->");
 			System.out.println(Arrays.toString(e.getValue().toArray()));
 		});
+		
+		List<String> list = Arrays.asList("11","33","22");
+		System.out.println(Joiner.on("','").join(list.toArray()));
 	}
 }

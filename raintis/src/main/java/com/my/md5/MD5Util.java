@@ -62,13 +62,13 @@ public class MD5Util {
     // ����������  
     public static void main(String args[]) {  
         String s = new String("tangfuqiang");  
-        System.out.println("ԭʼ��" + s);  
+        System.out.println("原数据-->" + s);  
         String string2MD5 = string2MD5(s);
-        System.out.println("MD5��" + string2MD5);  
+        System.out.println("MD5码-->" + string2MD5);  
         String convertMD5 = convertMD5(s);
-        System.out.println("���ܵģ�" + convertMD5);  
-        System.out.println(convertMD5.equals(convertMD5(s)));
-        System.out.println("���ܵģ�" + convertMD5(convertMD5(s)));  
+        System.out.println("转换md5-->" + convertMD5);  
+        System.out.println("是否相等-->"+convertMD5.equals(convertMD5(s)));
+        System.out.println("解密-->" + convertMD5(convertMD5(s)));  
         String str = "fffsfl|fdsfsdf|dfsfafaf";
         String[] splitStr = str.split("\\|");
         for(String s1:splitStr){

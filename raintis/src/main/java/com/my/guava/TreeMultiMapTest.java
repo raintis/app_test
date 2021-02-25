@@ -24,6 +24,15 @@ public class TreeMultiMapTest {
 		map.put(2, 6);
 		System.out.println(map);
 		System.out.println(map.values());
-		//System.out.println(map.entries().);
+		
+		TreeMultimap<String,String> map2 = TreeMultimap.create((s1,s2) -> s1.compareTo(s2),Ordering.natural());
+		map2.put("3", "2");
+		map2.put("3", "3");
+		map2.put("4", "4");
+		map2.put("4", "5");
+		map2.put("4", "5");
+		map2.put("2", "5");
+		map2.put("2", "6");
+		System.out.println(map2);
 	}
 }
