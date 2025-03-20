@@ -1,5 +1,7 @@
 package com.my.concurrent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -35,7 +37,39 @@ public class ThreadExecutorTest {
 			}
 		}
 	}
-	
+
+	@Test
+	public void testCoreSizeReset(){
+		ThreadPoolExecutor es2 = new ThreadPoolExecutor(10,
+				10,
+				5L,
+				TimeUnit.SECONDS,
+				new LinkedBlockingQueue<>(50),new ThreadFactory() {
+			@Override
+			public Thread newThread(Runnable r) {
+				return new Thread(r,"name");
+			}
+		});
+		es2.allowCoreThreadTimeOut(true);
+
+		for(int i = 0;i<100;i++){
+			if(i == 20){
+				es2.setCorePoolSize(20);
+				System.out.println("corePoolSize-->" + es2.getCorePoolSize());
+			}
+			es2.execute(() -> runSlowTask());
+			System.out.println("getActiveCount -->" + es2.getActiveCount());
+		}
+	}
+
+	private void runSlowTask(){
+		try {
+			Thread.sleep(2000000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private void run(){
 		ThreadPoolExecutor es2 = new ThreadPoolExecutor(100,
                 120,
@@ -55,6 +89,7 @@ public class ThreadExecutorTest {
 					System.out.println(String.format("execute threads %d", ato.get()+1));
 					Test1(ato.incrementAndGet());
 				});
+				System.out.println("CorePoolSize" + es2.getCorePoolSize());
 			} catch (Exception e) {
 				//System.out.println(e.getMessage());
 			}
@@ -84,5 +119,19 @@ public class ThreadExecutorTest {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@Test
+	public void testSerialProfile(){
+		List<SerialObject> lists = new ArrayList<SerialObject>(10000000);
+		for(int i=0;i<10000000;i++){
+			lists.add(new SerialObject());
+		}
+	}
+
+	static class SerialObject{
+		String str = "fasdfadfasdfaffsd";
+		int it = 10000;
+		String[] strarr = new String[]{"fasdfasf","fjalsdfjaldjf;ad;f;adfasf","fjas;dlfja;sdjf;asjd;fasdf;asjd;fadsf"};
 	}
 }

@@ -17,13 +17,13 @@ public class Server {
             Naming.bind("rmi://localhost:9090/user", userService);
             System.err.println("binding success");
         } catch (RemoteException e) {
-            System.out.println("创建远程对象发生异常！");
+            //System.out.println("创建远程对象发生异常！");
             e.printStackTrace();
         } catch (AlreadyBoundException e) {
-            System.out.println("发生重复绑定对象异常！");
+            //System.out.println("发生重复绑定对象异常！");
             e.printStackTrace();
         } catch (MalformedURLException e) {
-            System.out.println("URL异常！");
+            //System.out.println("URL异常！");
             e.printStackTrace();
         }
     }

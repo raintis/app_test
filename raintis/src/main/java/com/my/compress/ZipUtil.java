@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Base64;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -44,20 +45,33 @@ public class ZipUtil {
 		return out.toString();
 	}
 
+	public static String uncompress(byte[] b)throws IOException {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		ByteArrayInputStream in = new ByteArrayInputStream(b);
+		GZIPInputStream gunzip = new GZIPInputStream(in);
+		byte[] buffer = new byte[256];
+		int n;
+		while ((n = gunzip.read(buffer)) >= 0) {
+			out.write(buffer, 0, n);
+		}
+		// toString()使用平台默认编码，也可以显式的指定如toString("GBK")
+		return out.toString();
+	}
+	
 	// 测试方法
 	public static void main(String[] args) throws IOException {
-		URL url = ZipUtil.class.getResource("/compress/uncompress.txt");
-		String read = Files.toString(new File("c:\\uncompress.txt"), Charsets.UTF_8);
-		Stopwatch watch = Stopwatch.createStarted();
-		String compress = ZipUtil.compress(read);
-		 System.out.println("compress time -->"+watch.toString());
+//		URL url = ZipUtil.class.getResource("/compress/uncompress.txt");
+		String read = Files.toString(new File("E:\\log\\港口\\sdcompressreport.json"), Charsets.UTF_8);
+		//Stopwatch watch = Stopwatch.createStarted();
+		//String compress = ZipUtil.compress(read);
+		 //System.out.println("compress time -->"+watch.toString());
 		//System.out.println(compress);
 		long start = System.currentTimeMillis();
-		String uncompress = ZipUtil.uncompress(compress);
+		String uncompress = ZipUtil.uncompress(Base64.getDecoder().decode(read));
 		System.out.println(String.format("unpress time -->%d", (System.currentTimeMillis() - start)));
 		//System.out.println();
-		Files.write(uncompress.getBytes(), new File("c:\\uncompress_zip.txt"));
-		Files.write(compress.getBytes(), new File("c:\\compress_zip.txt"));
+//		Files.write(uncompress.getBytes(), new File("c:\\uncompress_zip.txt"));
+		Files.write(uncompress.getBytes(), new File("E:\\log\\港口\\sduncompressreport.txt"));
 	}
 
 }
